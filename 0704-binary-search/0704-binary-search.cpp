@@ -8,7 +8,7 @@ public:
         int middle = (left + right) / 2;
         if (source[middle] == target) return middle;
         else if (source[middle] < target) return BinarySearch (source, middle + 1, right, target);
-        else return BinarySearch (source, left, middle - 1, target);
+        else return BinarySearch (source, left, middle, target);
     }
 
     int search(vector<int>& nums, int target) {
