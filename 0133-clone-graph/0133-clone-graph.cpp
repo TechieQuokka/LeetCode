@@ -20,33 +20,6 @@ public:
 */
 
 class Solution {
-private:
-    void BreadthFirstSearch (struct Node* node) {
-
-        bool check[128] = { 0, };
-
-        queue<struct Node*> buffer;
-        buffer.push (node);
-
-        while (!buffer.empty()) {
-
-            auto current = buffer.front(); buffer.pop();
-
-            if (check[current->val] == true) continue;
-            else check[current->val] = true;
-
-            cout << current->val << " : ";
-
-            for (const auto& element : current->neighbors) {
-
-                buffer.push (element);
-                cout << element->val << " ";
-            }
-            cout << endl;
-        }
-        return;
-    }
-
 public:
     struct Node* cloneGraph(struct Node* node) {
         
