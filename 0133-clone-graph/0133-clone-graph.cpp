@@ -71,9 +71,6 @@ public:
 
             if (check[current->val] == true) continue;
             else check[current->val] = true;
-            
-            // cout << current->val << ' ' << destination->val << ' ';
-            // printf ("%p %p\n", &current, &destination);
 
             for (const auto& element : current->neighbors) {
                 if (copies[element->val]) {
@@ -92,9 +89,6 @@ public:
                 copyBuffer.push(copies[element->val] = newNode);
             }
         }
-
-        BreadthFirstSearch (node); cout << endl;
-        BreadthFirstSearch (clone); cout << endl;
 
         return clone;
     }
