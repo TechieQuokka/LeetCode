@@ -40,7 +40,9 @@ public:
         }
 
         previous->next = pivot->next;
-
-        return head->next;
+        delete pivot;
+        auto result = head->next;
+        delete head;
+        return result;
     }
 };
