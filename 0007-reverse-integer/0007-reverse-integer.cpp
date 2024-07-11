@@ -52,6 +52,7 @@ public:
     int reverse(int x) {
 
         if (x == 0) return 0;
+        else if (x == -2147483648) return 0;
         
         long long sign = x < 0 ? -1 : 1;
 
@@ -60,11 +61,9 @@ public:
         char buffer[128] = { 0, };
         IntegerToString (x, buffer);
 
-        cout << buffer << endl;
         int length = strlen (buffer);
         Palindrome (buffer, length);
-
-        cout << buffer << endl;
+        
         auto result = StringToInteger (buffer, length);
         if (result > 2147483647) return 0;
         return result * sign;
