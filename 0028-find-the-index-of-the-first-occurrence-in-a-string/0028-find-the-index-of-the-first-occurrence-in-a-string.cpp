@@ -52,6 +52,7 @@ private:
         }
         return table;
     }
+    
 public:
     int strStr(string haystack, string needle) {
         
