@@ -28,7 +28,7 @@ public:
             this->Swap<int> (firstLength, secondLength);
         }
 
-        char result[16384] = { 0, }; int index = 0;
+        char result[10001] = { 0, }; int index = 0;
         int temp = 0, firstIndex = firstLength - 1;
         for (int secondIndex = secondLength - 1; secondIndex >= 0; firstIndex--, secondIndex--) {
 
