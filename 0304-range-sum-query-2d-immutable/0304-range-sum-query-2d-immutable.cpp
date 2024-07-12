@@ -23,12 +23,6 @@ public:
         result[2] = this->table[row1][col2 + 1];
         result[3] = this->table[row2 + 1][col1];
 
-        // for (const auto& element : result) {
-
-        //     cout << element << " ";
-        // }
-        // cout << endl;
-
         return result[0] - (result[2] + result[3]) + result[1];
     }
 };
