@@ -3,9 +3,8 @@ private:
     vector<int> buffer;
 
 public:
-    NumArray(vector<int>& numbers) : buffer (numbers.size() + 1) {
+    NumArray(vector<int>& numbers) : buffer (numbers.size() + 1, 0) {
         
-        buffer.push_back (0);
         int length = numbers.size();
         for (int index = 0; index < length; index++) {
 
