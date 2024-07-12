@@ -13,10 +13,9 @@ class Solution {
 private:
     int DepthFirstSearch (struct TreeNode* current, int number) {
 
-        if (current == NULL) return number;
+        if (current == NULL) return 0;
 
-        number *= 10;
-        int value = current->val + number;
+        int value = current->val + number * 10;
         int left = this->DepthFirstSearch (current->left, value);
         int right = this->DepthFirstSearch (current->right, value);
 
