@@ -9,7 +9,7 @@ private:
         return;
     }
 
-    void Palindrom (char* buffer, int length) {
+    void Reverse (char* buffer, int length) {
 
         for (int left = 0, right = length - 1; left < right; left++, right--) {
 
@@ -47,7 +47,7 @@ public:
         if (temp == 1) result[index++] = '1';
         result[index] = '\0';
 
-        this->Palindrom (result, index);
+        this->Reverse (result, index);
         return string (result);
     }
 };
