@@ -11,6 +11,11 @@
  */
 class Solution {
 private:
+    bool IsLeaf (struct TreeNode* current) {
+
+        return current->left == NULL && current->right == NULL;
+    }
+
     int DepthFirstSearch (struct TreeNode* current, int number) {
 
         if (current == NULL) return 0;
@@ -19,14 +24,14 @@ private:
         int left = this->DepthFirstSearch (current->left, value);
         int right = this->DepthFirstSearch (current->right, value);
 
-        if (current->left == NULL && current->right == NULL) return value;
+        if (this->IsLeaf (current)) return value;
         return left + right;
     }
 
 public:
     int sumNumbers(struct TreeNode* root) {
         
-        int result = DepthFirstSearch (root, 0);
-        return result;
+        if (root == NULL) throw;
+        return DepthFirstSearch (root, 0);
     }
 };
