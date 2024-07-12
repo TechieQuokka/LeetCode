@@ -131,25 +131,14 @@ private:
         return;
     }
 
-    void Palindrome (char* source, int length) {
-
-        if (source == NULL) return;
-
-        for (int left = 0, right = length - 1; left < right; left++, right--) {
-
-            Swap (source + left, source + right, sizeof (char));
-        }
-        return;
-    }
-
 public:
     ListNode* addTwoNumbers(struct ListNode* list1, struct ListNode* list2) {
         
         char* left = this->ConvertToString (list1), * right = this->ConvertToString (list2);
         char sum[128] = { 0, };
 
-        Palindrome (left, strlen (left));
-        Palindrome (right, strlen (right));
+        Reverse (left, strlen (left));
+        Reverse (right, strlen (right));
         Sum (left, right, sum);
         
         auto result = this->ConvertToList (sum);
