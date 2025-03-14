@@ -1,4 +1,5 @@
 #include <limits.h>
+#include <climits>
 
 class Solution {
 public:
@@ -25,21 +26,8 @@ public:
         int leftSize = left[0].size();
         int rightSize = right[0].size();
         
-        if (leftSize == 0) {
-            if (rightSize % 2 == 0) {
-            return (right[0][(rightSize - 1) / 2] + right[0][(rightSize-1) / 2 + 1]) / 2.0;
-            }
-            else return right[0][(rightSize - 1) / 2];
-        }
-        else if (rightSize == 0) {
-            if (leftSize % 2 == 0) {
-            return (left[0][(leftSize - 1) / 2] + left[0][(leftSize-1) / 2 + 1]) / 2.0;
-            }
-            else return left[0][(leftSize - 1) / 2];
-        }
-        
         int start = 0;
-        int end = nums1Length;
+        int end = leftSize;
         while (start <= end) {
             
             int positionX = (start + end) / 2;
@@ -53,17 +41,17 @@ public:
             if (smallLeftValue <= largeRightValue &&
                 largeLeftValue >= smallRightValue) {
             
-            resultLeft = max (smallLeftValue, smallRightValue);
-            resultRight = min (largeLeftValue, largeRightValue);
-            break;
+                resultLeft = max (smallLeftValue, smallRightValue);
+                resultRight = min (largeLeftValue, largeRightValue);
+                break;
             }
             else if (smallLeftValue <= largeRightValue) {
             
-            start = positionX + 1;
+                start = positionX + 1;
             }
             else {
             
-            end = positionX - 1;
+                end = positionX - 1;
             }
         }
         
