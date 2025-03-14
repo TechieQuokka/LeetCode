@@ -12,16 +12,16 @@ public:
             char character = source[right];
             if (table[(int)character] == 0) {
             
-            table[(int)character] = true;
-            right++;
-            count++;
-            maxCount = max (maxCount, count);
-            continue;
+                table[(int)character] = true;
+                right++;
+                count++;
+                maxCount = max (maxCount, count);
+                continue;
             }
             while (source[left++] != character) {
                 
-            table[(int)source[left - 1]] = false;
-            count--;
+                table[(int)source[left - 1]] = false;
+                count--;
             }
             
             right++;
