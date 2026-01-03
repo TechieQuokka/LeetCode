@@ -13,14 +13,12 @@ private:
 
         if (depth == size * 2) {
 
-            if (isParentheses(current)) outResult.push_back (current);
+            outResult.push_back (current);
             return;
         }
 
-        if (open == size + 1 || close == size + 1) return;
-
-        solution (current + '(', open + 1, close, depth + 1, size, outResult);
-        solution (current + ')', open, close + 1, depth + 1, size, outResult);
+        if (open < size) solution (current + '(', open + 1, close, depth + 1, size, outResult);
+        if (close < open) solution (current + ')', open, close + 1, depth + 1, size, outResult);
         return;
     }
 
