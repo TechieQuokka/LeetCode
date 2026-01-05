@@ -13,8 +13,8 @@ public:
             int carry = 0;
             for (int j = num2.length() - 1; j >= 0; j--) {
 
-                int operand1 = num2[j] - '0';
-                int operand2 = num1[i] - '0';
+                int operand1 = num1[i] - '0';
+                int operand2 = num2[j] - '0';
 
                 int calculate = operand1 * operand2 + carry;
                 buffer += digitToCharacter (calculate % 10);
