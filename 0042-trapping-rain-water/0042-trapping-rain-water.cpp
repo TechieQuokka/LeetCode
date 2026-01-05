@@ -12,7 +12,7 @@ public:
         int water = 0;
 
         while (left < right) {
-            if (height[left] < height[right]) {
+            if (height[left] <= height[right]) {
                 if (height[left] >= left_max) {
                     left_max = height[left];
                 }
