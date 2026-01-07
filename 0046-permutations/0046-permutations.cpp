@@ -3,17 +3,16 @@ public:
     vector<vector<int>> permute(vector<int>& nums) {
         
         vector<vector<int>> answer;
-        vector<int> buffer (nums.size());
-        bool table[8] = { false, };
-        permutation (nums, buffer, table, 0, 0, nums.size(), answer);
+        this->buffer.resize (nums.size());
+        permutation (nums, this->buffer, this->check, 0, nums.size(), answer);
 
         return answer;
     }
 
 private:
-    void permutation (const vector<int>& nums, vector<int>& buffer, bool check[], int current, int depth, int size, vector<vector<int>>& outResult) {
+    void permutation (const vector<int>& nums, vector<int>& buffer, bool check[], int current, int size, vector<vector<int>>& outResult) {
 
-        if (depth == size) {
+        if (current == size) {
 
             outResult.push_back (buffer);
             return;
@@ -24,9 +23,13 @@ private:
 
             buffer[current] = nums[index];
             check[index] = true;
-            permutation (nums, buffer, check, current + 1, depth + 1, size, outResult);
+            permutation (nums, buffer, check, current + 1, size, outResult);
             check[index] = false;
         }
         return;
     }
+
+private:
+    vector<int> buffer;
+    bool check[16];
 };
