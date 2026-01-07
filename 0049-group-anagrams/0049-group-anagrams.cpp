@@ -8,7 +8,6 @@ public:
 
             string data = element;
             sort(data.begin(), data.end());
-            if (table.contains(data) == false) table[data] = vector<string>();
 
             table[data].push_back (element);
         }
