@@ -32,14 +32,6 @@ public:
             }
         }
 
-        for (int row = 0; row < width; row++) {
-            for (int column = 0; column < height; column++) {
-
-                cout << " " << obstacleGrid[row][column] ;
-            }
-            cout << endl;
-        }
-
         int answer = obstacleGrid[width - 1][height - 1];
         return answer < 0 ? 0 : answer;
     }
