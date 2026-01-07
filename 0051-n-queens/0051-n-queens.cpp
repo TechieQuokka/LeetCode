@@ -3,7 +3,7 @@ public:
     vector<vector<string>> solveNQueens(int n) {
         
         vector<vector<string>> answer;
-        vector<int> buffer(n, EMPTY);
+        vector<int> buffer(n);
         fill (begin(check), end(check), false);
         NQueen (buffer, 0, n, answer);
 
@@ -68,7 +68,4 @@ private:
 
 private:
     bool check[16];
-
-private:
-    const int EMPTY = -1;
 };
