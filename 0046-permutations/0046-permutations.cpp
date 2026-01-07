@@ -4,6 +4,7 @@ public:
         
         vector<vector<int>> answer;
         this->buffer.resize (nums.size());
+        fill (begin(check), end(check), false);
         permutation (nums, this->buffer, this->check, 0, nums.size(), answer);
 
         return answer;
