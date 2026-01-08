@@ -20,7 +20,6 @@ public:
             }
             else count++;
             nums[left++] = nums[right++];
-            display (nums, left, right, count);
         }
 
         return left;
