@@ -27,7 +27,7 @@ public:
     }
 
 private:
-    int largestRectangleArea(vector<int> heights) {
+    int largestRectangleArea(vector<int>& heights) {
         
         heights.push_back(0);
         stack<int> buffer;
@@ -50,6 +50,7 @@ private:
             buffer.push (index);
         }
 
+        heights.pop_back();
         return maxArea;
     }
 
