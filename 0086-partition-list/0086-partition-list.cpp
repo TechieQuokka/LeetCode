@@ -54,7 +54,7 @@ public:
         }
 
         struct ListNode* answer = previous->next;
-        delete previous, left, right;
+        delete previous; delete left; delete right;
         return answer;
     }
 };
