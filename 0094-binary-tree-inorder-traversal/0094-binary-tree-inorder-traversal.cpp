@@ -11,25 +11,19 @@
  */
 class Solution {
 private:
-    struct TreeNodeType* table;
-    void inorder (struct TreeNode* current) {
+    vector<int> table;
 
-        if (current == NULL) return;
+    void inorder(TreeNode* current) {
+        if (current == nullptr) return;
 
-        inorder (current->left);
-        table.push_back (current->val);
-        inorder (current->right);
-        return;
+        inorder(current->left);
+        table.push_back(current->val);
+        inorder(current->right);
     }
 
 public:
-    vector<int> inorderTraversal(TreeNode* current) {
-        
-        if (current == NULL) throw;
-
-        this->table = current;
-        inorder (this->table);
-
-        return this->table;
+    vector<int> inorderTraversal(TreeNode* root) {
+        inorder(root);
+        return table;
     }
 };
